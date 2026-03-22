@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Nuvora — A full-service digital agency delivering AI automation, web design, digital marketing, and creative services. We Build What's Next."/>
+<meta name="theme-color" content="#0D1B2A"/>
+<title>Nuvora — We Build What's Next</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+<style>
+/* Inline critical SVG icon styles */
+svg { display: block; }
+.icon-ai path, .icon-ai rect { stroke: currentColor; }
+</style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-logo">NUVORA</div>
+  <div class="preloader-bar"></div>
+  <div class="preloader-count">0%</div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor"><span id="cursor-dot"></span></div>
+<div id="cursor-ring"></div>
+
+<!-- NOISE OVERLAY -->
+<div class="noise-overlay"></div>
+
+<!-- AMBIENT ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- WEBGL BACKGROUND CANVAS -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- ══════════════════════════════════
+     NAVIGATION
+══════════════════════════════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">NUVORA</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-btn">Start a Project</a>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      Available for New Projects — Syria &amp; Global
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line">
+        <span class="word">We</span>&nbsp;<span class="word">Build</span>
+      </span>
+      <span class="line">
+        <span class="word accent">What's</span>&nbsp;<span class="word accent">Next</span>
+      </span>
+    </h1>
+
+    <p class="hero-desc">
+      Nuvora is a full-service digital agency delivering AI automation, web design, digital marketing, and creative services — engineered for the future, crafted for results.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">
+        <span>Explore Services</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="#portfolio" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="m8 21 4-4 4 4"/><path d="M2 17h20"/></svg>
+        <span>See Our Work</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <canvas id="hero-canvas" width="500" height="500"></canvas>
+  </div>
+
+  <div class="hero-stats-row">
+    <div class="hero-stat">
+      <div class="hero-stat-num">6+</div>
+      <div class="hero-stat-label">Core Services</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">4</div>
+      <div class="hero-stat-label">Expert Team</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">∞</div>
+      <div class="hero-stat-label">Possibilities</div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line-v"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MARQUEE
+══════════════════════════════════ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item"><div class="marquee-dot"></div>AI &amp; Automation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Web Design</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Digital Marketing</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Brand Identity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Content Creation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>CV Design</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>AI &amp; Automation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Web Design</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Digital Marketing</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Brand Identity</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>Content Creation</div>
+    <div class="marquee-item"><div class="marquee-dot"></div>CV Design</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SERVICES
+══════════════════════════════════ -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-num">01</span>
+        What We Do
+      </div>
+      <h2 class="section-headline">Services Built for <em>Real Results</em></h2>
+      <p class="section-sub">From intelligent automation to stunning design — every service is engineered to grow your business and position you ahead of the competition.</p>
+    </div>
+    <div class="services-cta-area">
+      <div class="services-count">06</div>
+      <a href="#contact" class="btn-outline">
+        <span>Get Custom Quote</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <!-- AI & Automation -->
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+          <circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/>
+        </svg>
+      </div>
+      <h3 class="service-name">AI &amp; Automation</h3>
+      <p class="service-desc">Chatbots, workflow automation, and AI integrations that eliminate manual work — running 24/7 so you don't have to.</p>
+      <div class="service-meta">
+        <span class="service-price">From $150</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Design -->
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="m8 21 4-4 4 4"/><path d="M2 17h20"/>
+        </svg>
+      </div>
+      <h3 class="service-name">Web Design &amp; Dev</h3>
+      <p class="service-desc">Fast, SEO-optimized, visually extraordinary websites built to convert visitors into loyal clients from the first impression.</p>
+      <div class="service-meta">
+        <span class="service-price">From $100</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Marketing -->
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <h3 class="service-name">Digital Marketing</h3>
+      <p class="service-desc">Social media management, content calendars, and data-driven growth strategies delivering measurable ROI every month.</p>
+      <div class="service-meta">
+        <span class="service-price">From $120/mo</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Creation -->
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/>
+        </svg>
+      </div>
+      <h3 class="service-name">Content Creation</h3>
+      <p class="service-desc">Compelling articles, social posts, and brand storytelling that builds authority, drives traffic, and converts readers into clients.</p>
+      <div class="service-meta">
+        <span class="service-price">From $60</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- CV Design -->
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <h3 class="service-name">CV &amp; Resume Design</h3>
+      <p class="service-desc">ATS-optimized, visually striking CVs and cover letters engineered to stand out and land interviews in competitive markets.</p>
+      <div class="service-meta">
+        <span class="service-price">From $25</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graphic Design -->
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+        </svg>
+      </div>
+      <h3 class="service-name">Graphic Design</h3>
+      <p class="service-desc">Logos, brand kits, and visual systems that communicate your identity with precision and make your business unforgettable.</p>
+      <div class="service-meta">
+        <span class="service-price">From $40</span>
+        <div class="service-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     STATS
+══════════════════════════════════ -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-num-large" data-target="6" data-suffix="+">6+</span>
+      <span class="stat-label-text">Premium Services</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-large" data-target="4" data-suffix="">4</span>
+      <span class="stat-label-text">Expert Team Members</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-large" data-target="24" data-suffix="hr">24hr</span>
+      <span class="stat-label-text">Response Guarantee</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-large" data-target="100" data-suffix="%">100%</span>
+      <span class="stat-label-text">Client Satisfaction</span>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════
+     PORTFOLIO
+══════════════════════════════════ -->
+<section id="portfolio" style="padding:8rem 0;min-height:auto;">
+  <div class="portfolio-header">
+    <div class="section-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-num">02</span>
+      Selected Work
+    </div>
+    <h2 class="section-headline">Projects That <em>Speak Louder</em></h2>
+    <p class="section-sub">Drag to explore. Every project is a transformation story.</p>
+  </div>
+
+  <div class="portfolio-scroll-wrap">
+    <div class="portfolio-track">
+
+      <!-- Card 1 -->
+      <div class="portfolio-card">
+        <div class="portfolio-card-bg card-gradient-1"></div>
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-num">01</div>
+        <div class="portfolio-link-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+        <div class="portfolio-card-content">
+          <div class="portfolio-cat">AI &amp; Automation</div>
+          <div class="portfolio-title">WhatsApp AI Support System</div>
+          <div class="portfolio-tech">n8n · WhatsApp Business API · Google Sheets</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="portfolio-card">
+        <div class="portfolio-card-bg card-gradient-2"></div>
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-num">02</div>
+        <div class="portfolio-link-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+        <div class="portfolio-card-content">
+          <div class="portfolio-cat">Web Design &amp; Development</div>
+          <div class="portfolio-title">Restaurant Digital Presence</div>
+          <div class="portfolio-tech">Next.js · Tailwind CSS · Netlify</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="portfolio-card">
+        <div class="portfolio-card-bg card-gradient-3"></div>
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-num">03</div>
+        <div class="portfolio-link-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+        <div class="portfolio-card-content">
+          <div class="portfolio-cat">Brand Identity</div>
+          <div class="portfolio-title">Full Brand System — Damascus Café</div>
+          <div class="portfolio-tech">Canva · Brand Kit · Print &amp; Digital</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="portfolio-card">
+        <div class="portfolio-card-bg card-gradient-4"></div>
+        <div class="portfolio-card-overlay"></div>
+        <div class="portfolio-card-num">04</div>
+        <div class="portfolio-link-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+        </div>
+        <div class="portfolio-card-content">
+          <div class="portfolio-cat">Digital Marketing</div>
+          <div class="portfolio-title">Fashion Boutique Growth Campaign</div>
+          <div class="portfolio-tech">Instagram · Meta Suite · Content Strategy</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════
+     FOUNDER
+══════════════════════════════════ -->
+<section id="founder">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-num">03</span>
+    The Founder
+  </div>
+  <h2 class="section-headline">The Mind <em>Behind</em> Nuvora</h2>
+
+  <div class="founder-grid">
+    <div class="founder-visual">
+      <div class="founder-frame">
+        <div class="founder-frame-deco deco-tl"></div>
+        <div class="founder-frame-deco deco-br"></div>
+        <div class="founder-frame-deco deco-tr"></div>
+        <div class="founder-avatar-circle">
+          <div class="founder-avatar-glow"></div>
+          A
+        </div>
+        <div class="founder-name-tag">
+          <div class="founder-name-large">Alaa Taifour</div>
+          <div class="founder-role-tag">Founder &amp; Agency Director</div>
+        </div>
+      </div>
+      <div class="founder-badge">Agency Director</div>
+    </div>
+
+    <div class="founder-info">
+      <div class="founder-greeting">// About the Founder</div>
+      <h3 class="founder-big-name">Alaa<br/>Taifour</h3>
+      <div class="founder-title-role">Founder · Agency Director · Digital Architect</div>
+
+      <p class="founder-bio-text">
+        With a background in hospitality management and a deep passion for technology, Alaa bridges the gap between human experience and digital innovation. Based between Dubai and Syria, he leads Nuvora with a mission to bring world-class digital services to the region and beyond.
+      </p>
+      <p class="founder-bio-text">
+        Currently a Guest Experience Expert at Marriott International, Alaa brings a unique perspective that fuses service excellence with cutting-edge AI automation, API integration, and full-stack development.
+      </p>
+
+      <div class="founder-skills">
+        <span class="skill-pill">AI &amp; Automation</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">API Integration</span>
+        <span class="skill-pill">Next.js</span>
+        <span class="skill-pill">Digital Strategy</span>
+        <span class="skill-pill">CRM Systems</span>
+        <span class="skill-pill">Opera PMS</span>
+        <span class="skill-pill">HubSpot</span>
+        <span class="skill-pill">Supabase</span>
+        <span class="skill-pill">Netlify</span>
+      </div>
+
+      <div class="founder-socials">
+        <a href="https://wa.me/971562935388" class="social-btn" title="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+        <a href="mailto:latyfwr10@gmail.com" class="social-btn" title="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="social-btn" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-num">04</span>
+    Get In Touch
+  </div>
+  <h2 class="section-headline">Start Your <em>Project</em> Today</h2>
+
+  <div class="contact-grid">
+    <div class="contact-info-side">
+      <p class="contact-tagline">
+        Ready to build something extraordinary? Whether you need a chatbot, a website, or a full brand system — we deliver excellence, on time, every time.
+      </p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">latyfwr10@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">+971 562 935 388</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Based In</div>
+            <div class="contact-value">Dubai, UAE · Syria</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Serving</div>
+            <div class="contact-value">Global — Remote Worldwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-side">
+      <div class="form-box">
+        <div class="form-box-title">Tell Us About Your Project</div>
+        <div class="form-box-sub">We respond within 24 hours — guaranteed.</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="John"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="john@company.com"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">WhatsApp Number</label>
+            <input class="form-input" type="tel" placeholder="+971 50 000 0000"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Service Required</label>
+          <select class="form-select">
+            <option value="">Select a service...</option>
+            <option>AI &amp; Automation</option>
+            <option>Web Design &amp; Development</option>
+            <option>Digital Marketing</option>
+            <option>Content Creation</option>
+            <option>CV &amp; Resume Design</option>
+            <option>Graphic Design</option>
+            <option>Full Package — All Services</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <span class="form-cta-label">How would you like to connect?</span>
+          <div class="cta-grid">
+            <button class="cta-choice active">WhatsApp Chat</button>
+            <button class="cta-choice">Book a Call</button>
+            <button class="cta-choice">Get a Quote</button>
+            <button class="cta-choice">See Our Work</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Project Details</label>
+          <textarea class="form-textarea" placeholder="Describe your project, goals, timeline, and budget..."></textarea>
+        </div>
+
+        <button class="btn-submit">
+          <div class="btn-submit-inner">
+            <span>Send Message — Let's Build Together</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-text">NUVORA</div>
+      <p class="footer-tagline-text">A full-service digital agency building the future — one project at a time. Based in Syria &amp; Dubai, serving clients worldwide.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links-list">
+        <li><a href="#services">AI &amp; Automation</a></li>
+        <li><a href="#services">Web Design</a></li>
+        <li><a href="#services">Digital Marketing</a></li>
+        <li><a href="#services">Graphic Design</a></li>
+        <li><a href="#services">CV Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Agency</div>
+      <ul class="footer-links-list">
+        <li><a href="#founder">The Founder</a></li>
+        <li><a href="#portfolio">Our Work</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#hero">Home</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links-list">
+        <li><a href="https://wa.me/971562935388" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="mailto:latyfwr10@gmail.com">Email</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Nuvora Agency. All rights reserved. — We Build What's Next.</div>
+    <div class="footer-socials">
+      <a href="https://wa.me/971562935388" class="social-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      </a>
+      <a href="mailto:latyfwr10@gmail.com" class="social-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
