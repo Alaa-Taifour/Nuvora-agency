@@ -1,0 +1,22 @@
+{
+  "name": "nuvora-agency",
+  "version": "1.0.0",
+  "description": "Nuvora — A full-service digital agency delivering AI automation, web design, digital marketing, and creative services",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build step required'",
+    "lint": "echo 'No linting configured for static HTML'"
+  },
+  "keywords": [
+    "digital-agency",
+    "ai-automation",
+    "web-design",
+    "digital-marketing"
+  ],
+  "author": "Alaa Taifour — Nuvora Agency",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  }
+}
